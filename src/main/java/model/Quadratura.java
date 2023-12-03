@@ -8,6 +8,7 @@ public class Quadratura {
 
         double[] abscissas = new double[n];
         double[] pesos = new double[n];
+        
         switch (n) {
             case 2:
                 abscissas = new double[] { -0.5773502692, 0.5773502692 };

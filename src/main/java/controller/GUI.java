@@ -46,14 +46,23 @@ public class GUI extends JFrame {
 
         button = new JButton("Calcular");
         button.addActionListener((ActionEvent e) -> {
-            String function = textFieldFunction.getText();
-            double a = Double.parseDouble(textFieldLowerLimit.getText());
-            double b = Double.parseDouble(textFieldUpperLimit.getText());
-            double n = Double.parseDouble(textFieldNumPoints.getText());
-            double resultado = quadraturaGaussiana(a, b, (int) n, x -> eval(function, x));
-            textFieldResult.setText(String.format("Resultado: %.6f", resultado));
-            double erro = ((b - a) / 2) * Math.pow(10, -n);
-            textFieldError.setText(String.format("Erro: %.6f", erro));
+            try {
+                String function = textFieldFunction.getText();
+                double a = Double.parseDouble(textFieldLowerLimit.getText());
+                double b = Double.parseDouble(textFieldUpperLimit.getText());
+                Integer n = Integer.parseInt(textFieldNumPoints.getText());
+        
+                double resultado = quadraturaGaussiana(a, b, n, x -> eval(function, x));
+                textFieldResult.setText(String.format("%.6f", resultado));
+        
+                double erro = ((b - a) / 2) * Math.pow(10, -n);
+                textFieldError.setText(String.format("%.6f", erro));
+            } catch (NumberFormatException ex) {
+                JOptionPane.showMessageDialog(GUI.this, "Erro de formato. Verifique os valores inseridos.", "Erro", JOptionPane.ERROR_MESSAGE);
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(GUI.this, "Ocorreu um erro durante o cálculo.", "Erro", JOptionPane.ERROR_MESSAGE);
+                ex.printStackTrace();
+            }
         });
 
         panel.add(labelFunction);
