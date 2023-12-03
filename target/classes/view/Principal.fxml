@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="controller.PrincipalController">
+   <children>
+      <Label layoutX="219.0" layoutY="14.0" text="Digite a funcao a ser integrada" />
+      <TextField fx:id="txtFuncao" layoutX="226.0" layoutY="40.0" />
+      <Label layoutX="242.0" layoutY="75.0" text="Digite o limite inferior" />
+      <TextField fx:id="txtLimInferior" layoutX="226.0" layoutY="110.0" />
+      <Label layoutX="239.0" layoutY="145.0" text="Digite o limite superior" />
+      <TextField fx:id="txtLimSuperior" layoutX="226.0" layoutY="180.0" />
+      <Label layoutX="219.0" layoutY="215.0" text="Digite a quantidade de pontos" />
+      <TextField fx:id="txtNumPontos" layoutX="226.0" layoutY="250.0" />
+      <Button fx:id="btnCalcular" layoutX="271.0" layoutY="285.0" maxWidth="75.0" mnemonicParsing="false" onAction="#btnCalcularOnAction" text="Calcular" />
+   </children>
+</AnchorPane>
