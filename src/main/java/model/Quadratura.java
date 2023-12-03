@@ -1,4 +1,4 @@
-package com;
+package model;
 
 import java.util.function.Function;
 

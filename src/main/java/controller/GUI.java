@@ -1,6 +1,6 @@
-package com;
+package controller;
 
-import static com.Quadratura.quadraturaGaussiana;
+import static model.Quadratura.quadraturaGaussiana;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.awt.Font;
