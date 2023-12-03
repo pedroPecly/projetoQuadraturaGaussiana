@@ -1,6 +1,6 @@
-package com.mycompany.quadraturagaussiana;
+package com;
 
-import static com.mycompany.quadraturagaussiana.Quadratura.quadraturaGaussiana;
+import static com.Quadratura.quadraturaGaussiana;
 import java.awt.event.ActionEvent;
 import javax.swing.*;
 import java.awt.Font;
