@@ -7,7 +7,7 @@ import static model.Quadratura.quadraturaGaussiana;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 
-public class GUI extends JFrame {
+public class PrincipalController extends JFrame {
     private JLabel labelFunction, labelLowerLimit, labelUpperLimit, labelNumPoints, labelResult, labelError;
     private JTextField textFieldFunction, textFieldLowerLimit, textFieldUpperLimit, textFieldNumPoints, textFieldResult,
             textFieldError;
@@ -18,7 +18,7 @@ public class GUI extends JFrame {
         return e.calculate();
     }
 
-    public GUI() {
+    public PrincipalController() {
         setTitle("Quadratura Gaussiana");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(600, 400);
@@ -58,9 +58,9 @@ public class GUI extends JFrame {
                 double erro = ((b - a) / 2) * Math.pow(10, -n);
                 textFieldError.setText(String.format("%.6f", erro));
             } catch (NumberFormatException ex) {
-                JOptionPane.showMessageDialog(GUI.this, "Erro de formato. Verifique os valores inseridos.", "Erro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(PrincipalController.this, "Erro de formato. Verifique os valores inseridos.", "Erro", JOptionPane.ERROR_MESSAGE);
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(GUI.this, "Ocorreu um erro durante o cálculo.", "Erro", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(PrincipalController.this, "Ocorreu um erro durante o cálculo.", "Erro", JOptionPane.ERROR_MESSAGE);
                 ex.printStackTrace();
             }
         });

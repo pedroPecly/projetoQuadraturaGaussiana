@@ -1,10 +1,10 @@
 package view;
 
-import controller.GUI;
+import controller.PrincipalController;
 
 public class App {
     public static void main(String[] args) {
-        GUI gui = new GUI();
-        gui.setVisible(true);
+        PrincipalController principal = new PrincipalController();
+        principal.setVisible(true);
     }
 }
